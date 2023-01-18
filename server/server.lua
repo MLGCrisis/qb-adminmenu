@@ -19,9 +19,9 @@ local permissions = {
 local players = {}
 
 -- Get Dealers
-QBCore.Functions.CreateCallback('test:getdealers', function(_, cb)
+--[[QBCore.Functions.CreateCallback('test:getdealers', function(_, cb)
     cb(exports['qb-drugs']:GetDealers())
-end)
+end)]]
 
 -- Get Players
 QBCore.Functions.CreateCallback('test:getplayers', function(_, cb) -- WORKS
