@@ -256,7 +256,7 @@ end)
 
 RegisterNetEvent('qb-admin:server:SaveCar', function(mods, vehicle, _, plate)
     local src = source
-    if QBCore.Functions.HasPermission(src, 'god') or IsPlayerAceAllowed(src, 'command') then
+    if QBCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
         local Player = QBCore.Functions.GetPlayer(src)
         local result = MySQL.query.await('SELECT plate FROM player_vehicles WHERE plate = ?', { plate })
         if result[1] == nil then
@@ -283,7 +283,7 @@ end)
 QBCore.Commands.Add('maxmods', Lang:t("desc.max_mod_desc"), {}, false, function(source)
     local src = source
     TriggerClientEvent('qb-admin:client:maxmodVehicle', src)
-end, 'god')
+end, 'admin')
 
 QBCore.Commands.Add('blips', Lang:t("commands.blips_for_player"), {}, false, function(source)
     local src = source
